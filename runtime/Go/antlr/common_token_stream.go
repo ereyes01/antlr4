@@ -44,11 +44,11 @@ type CommonTokenStream struct {
 	tokens []Token
 }
 
-func NewCommonTokenStream(lexer Lexer, channel int) *CommonTokenStream {
+func NewCommonTokenStream(src TokenSource, channel int) *CommonTokenStream {
 	return &CommonTokenStream{
 		channel:     channel,
 		index:       -1,
-		tokenSource: lexer,
+		tokenSource: src,
 		tokens:      make([]Token, 0),
 	}
 }

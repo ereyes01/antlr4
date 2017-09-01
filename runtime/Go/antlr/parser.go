@@ -94,8 +94,8 @@ func NewBaseParser(input TokenStream) *BaseParser {
 //
 var bypassAltsAtnCache = make(map[string]int)
 
-// reset the parser's state//
-func (p *BaseParser) reset() {
+// Reset the parser's state//
+func (p *BaseParser) Reset() {
 	if p.input != nil {
 		p.input.Seek(0)
 	}
@@ -396,7 +396,7 @@ func (p *BaseParser) GetTokenStream() TokenStream {
 // Set the token stream and reset the parser.//
 func (p *BaseParser) SetTokenStream(input TokenStream) {
 	p.input = nil
-	p.reset()
+	p.Reset()
 	p.input = input
 }
 
